@@ -1,0 +1,59 @@
+<div class="row">
+	<div ng-bind-html="message.data.k"></div>
+	<div class="medium-4 columns">
+		<div class="pitch">
+			Goalkeepers
+			<ul ng-repeat="player in team.keeper">
+				
+				<li>{{player.name}}</li>
+			</ul> <br />
+			Defenders
+			<ul ng-repeat="player in team.def">
+				
+				<li>{{player.name}}</li>
+			</ul> <br />
+			Midfielders
+			<ul ng-repeat="player in team.mid">
+				
+				<li>{{player.name}}</li>
+			</ul> <br />
+			Attackers
+			<ul ng-repeat="player in team.att">
+				
+				<li>{{player.name}}</li>
+			</ul>
+			
+		</div>
+		<div class="panel">Total Budget Remaining {{Budget}}</div>
+		<div class="panel">Team Name{{TeamName}}</div>
+		<div class="panel"> Previous Point {{PreviousPoint}}</div>
+		<div class="panel">Total Point {{TotalPoint}}</div>
+		<div class="label error">Message {{message}}</div>
+
+	</div>
+	<div class="medium-2 columns goalkeeper">
+		<strong>GoalKeepers</strong>
+		<ul ng-repeat="g in players.goal[0] track by $index">
+			<li ng-click="AddPlayer(g.name,0)">{{g.name}}-{{g.cost}}</li>
+		</ul>
+	</div>
+	<div class="medium-2 columns def">
+		<strong>Defenders</strong>
+		<ul ng-repeat="g in players.def[0] track by $index">
+			<li ng-click="AddPlayer(g.name,1)">{{g.name}}--{{g.cost}}</li>
+		</ul>
+	</div>
+	<div class="medium-2 columns mid">
+		<strong>Midfielders</strong>
+		<ul ng-repeat="g in players.mid[0] track by $index">
+			<li ng-click="AddPlayer(g.name,2)">{{g.name}}--{{g.cost}}</li>
+		</ul>
+	</div>
+	<div class="medium-2 columns att">
+		<strong>Attackers</strong>
+		<ul ng-repeat="g in players.att[0] track by $index">
+			<li ng-click="AddPlayer(g.name,3)">{{g.name}}--{{g.cost}}</li>
+		</ul>
+	</div>
+
+</div>
